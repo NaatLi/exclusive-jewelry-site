@@ -26,13 +26,7 @@
       --radius: 8px;
       --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Montserrat', sans-serif;
       background-color: var(--bg-main);
@@ -42,737 +36,160 @@
       display: flex;
       flex-direction: column;
     }
-
-    h1, h2, h3, h4, .brand-font {
+    h1, h2, h3, h4 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 700;
       letter-spacing: 0.03em;
     }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    button {
-      font-family: inherit;
-      cursor: pointer;
-      border: none;
-    }
-
-    .container {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+    a { text-decoration: none; color: inherit; }
+    button { font-family: inherit; cursor: pointer; border: none; }
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 20px; }
 
     /* TOP BAR */
-    .topbar {
-      background-color: #231F20;
-      color: #E7DFD5;
-      font-size: 12px;
-      padding: 8px 0;
-    }
-    .topbar-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .topbar-phones {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-    .topbar-phones a {
-      color: #FFFFFF;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .topbar-phones a:hover {
-      color: var(--gold);
-    }
-    .topbar-messengers {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .msg-btn {
-      padding: 3px 10px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-    }
-    .msg-max {
-      background: var(--gold);
-      color: #231F20;
-    }
-    .msg-tg {
-      background: rgba(255, 255, 255, 0.15);
-      color: #FFFFFF;
-    }
+    .topbar { background-color: #231F20; color: #E7DFD5; font-size: 12px; padding: 8px 0; }
+    .topbar-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .topbar-phones { display: flex; gap: 20px; align-items: center; }
+    .topbar-phones a { color: #FFFFFF; font-weight: 500; }
+    .topbar-phones a:hover { color: var(--gold); }
+    .topbar-messengers { display: flex; align-items: center; gap: 12px; }
+    .msg-btn { padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+    .msg-max { background: var(--gold); color: #231F20; }
+    .msg-tg { background: rgba(255, 255, 255, 0.15); color: #FFFFFF; }
 
     /* HEADER */
-    header {
-      background: var(--bg-surface);
-      border-bottom: 1px solid var(--border-color);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .header-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 0;
-    }
-    .logo-area {
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .logo-title {
-      font-size: 26px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-main);
-      font-weight: 700;
-    }
-    .logo-subtitle {
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold-dark);
-      margin-top: -3px;
-    }
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 28px;
-    }
-    nav a {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-weight: 500;
-      color: var(--text-main);
-      padding: 6px 0;
-      position: relative;
-      transition: color 0.2s;
-    }
-    nav a:hover, nav a.active {
-      color: var(--gold-dark);
-    }
-    nav a.active::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: var(--gold);
-    }
+    header { background: var(--bg-surface); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 100; }
+    .header-content { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+    .logo-area { display: flex; flex-direction: column; cursor: pointer; }
+    .logo-title { font-size: 26px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; }
+    .logo-subtitle { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dark); margin-top: -3px; }
+    nav ul { display: flex; list-style: none; gap: 28px; }
+    nav a { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500; padding: 6px 0; position: relative; }
+    nav a:hover, nav a.active { color: var(--gold-dark); }
+    nav a.active::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--gold); }
 
-    /* PAGES VIEW */
-    .page-section {
-      display: none;
-      animation: fadeIn 0.3s ease;
-    }
-    .page-section.active {
-      display: block;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    /* SECTIONS */
+    .page-section { display: none; }
+    .page-section.active { display: block; animation: fadeIn 0.3s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* HERO BANNER */
-    .hero {
-      background: linear-gradient(135deg, #F3EAE0 0%, #E8DCCF 100%);
-      padding: 70px 0;
-      border-bottom: 1px solid var(--border-color);
-    }
-    .hero-content {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      align-items: center;
-      gap: 40px;
-    }
-    .hero h1 {
-      font-size: 48px;
-      line-height: 1.15;
-      margin-bottom: 16px;
-      color: #231F20;
-    }
-    .hero p {
-      font-size: 16px;
-      color: #5C554F;
-      margin-bottom: 28px;
-      max-width: 520px;
-    }
-    .btn-gold {
-      display: inline-block;
-      background: var(--gold);
-      color: #231F20;
-      padding: 14px 34px;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border-radius: var(--radius);
-      transition: all 0.2s;
-    }
-    .btn-gold:hover {
-      background: var(--gold-dark);
-      color: #FFFFFF;
-      transform: translateY(-1px);
-    }
-    .hero-img {
-      width: 100%;
-      height: 380px;
-      object-fit: cover;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
+    /* HERO */
+    .hero { background: linear-gradient(135deg, #F3EAE0 0%, #E8DCCF 100%); padding: 70px 0; border-bottom: 1px solid var(--border-color); }
+    .hero-content { display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 40px; }
+    .hero h1 { font-size: 48px; line-height: 1.15; margin-bottom: 16px; }
+    .hero p { font-size: 16px; color: #5C554F; margin-bottom: 28px; max-width: 520px; }
+    .btn-gold { display: inline-block; background: var(--gold); color: #231F20; padding: 14px 34px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-radius: var(--radius); }
+    .btn-gold:hover { background: var(--gold-dark); color: #FFFFFF; }
+    .hero-img { width: 100%; height: 380px; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); }
 
-    /* METAL SPLIT BANNER */
-    .metal-nav {
-      padding: 40px 0;
-    }
-    .metal-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    .metal-card {
-      position: relative;
-      height: 220px;
-      border-radius: var(--radius);
-      overflow: hidden;
-      cursor: pointer;
-      display: flex;
-      align-items: flex-end;
-      padding: 30px;
-      color: #FFFFFF;
-    }
-    .metal-card img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-      z-index: 1;
-    }
-    .metal-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(35,31,32,0.1) 0%, rgba(35,31,32,0.7) 100%);
-      z-index: 2;
-    }
-    .metal-card:hover img {
-      transform: scale(1.05);
-    }
-    .metal-info {
-      position: relative;
-      z-index: 3;
-    }
-    .metal-info h3 {
-      font-size: 32px;
-      margin-bottom: 4px;
-    }
-    .metal-info span {
-      font-size: 13px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-    }
+    /* METAL SPLIT */
+    .metal-nav { padding: 40px 0; }
+    .metal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .metal-card { position: relative; height: 220px; border-radius: var(--radius); overflow: hidden; cursor: pointer; display: flex; align-items: flex-end; padding: 30px; color: #FFFFFF; }
+    .metal-card img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; z-index: 1; }
+    .metal-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(35,31,32,0.1) 0%, rgba(35,31,32,0.7) 100%); z-index: 2; }
+    .metal-card:hover img { transform: scale(1.05); }
+    .metal-info { position: relative; z-index: 3; }
+    .metal-info h3 { font-size: 32px; margin-bottom: 4px; }
+    .metal-info span { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-light); }
 
-    /* SHOWCASE & PRODUCTS */
-    .section-title {
-      text-align: center;
-      margin: 40px 0 24px;
-    }
-    .section-title h2 {
-      font-size: 36px;
-      color: var(--text-main);
-    }
-    .section-title p {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-
-    .tabs-header {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 30px;
-    }
-    .tab-btn {
-      padding: 8px 20px;
-      background: transparent;
-      border: 1px solid var(--border-color);
-      border-radius: 30px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-muted);
-      transition: all 0.2s;
-    }
-    .tab-btn.active, .tab-btn:hover {
-      background: var(--gold);
-      border-color: var(--gold);
-      color: #231F20;
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      margin-bottom: 50px;
-    }
-    .product-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      overflow: hidden;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-      position: relative;
-      transition: all 0.25s ease;
-    }
-    .product-card:hover {
-      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-      transform: translateY(-3px);
-      border-color: var(--gold-light);
-    }
-    .badge {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 4px;
-      color: #fff;
-      z-index: 2;
-    }
+    /* SHOWCASE */
+    .section-title { text-align: center; margin: 40px 0 24px; }
+    .section-title h2 { font-size: 36px; }
+    .section-title p { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+    .tabs-header { display: flex; justify-content: center; gap: 12px; margin-bottom: 30px; }
+    .tab-btn { padding: 8px 20px; background: transparent; border: 1px solid var(--border-color); border-radius: 30px; font-size: 13px; font-weight: 500; color: var(--text-muted); }
+    .tab-btn.active, .tab-btn:hover { background: var(--gold); border-color: var(--gold); color: #231F20; }
+    .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 50px; }
+    .product-card { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius); overflow: hidden; padding: 16px; display: flex; flex-direction: column; cursor: pointer; position: relative; transition: all 0.25s ease; }
+    .product-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.06); transform: translateY(-3px); border-color: var(--gold-light); }
+    .badge { position: absolute; top: 14px; left: 14px; font-size: 10px; font-weight: 700; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; color: #fff; z-index: 2; }
     .badge.hit { background: var(--badge-hit); }
     .badge.new { background: var(--badge-new); }
     .badge.shock { background: var(--badge-shock); }
-
-    .product-img-wrapper {
-      width: 100%;
-      height: 220px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 14px;
-      background: #FAFAFA;
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    .product-img-wrapper img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      mix-blend-mode: multiply;
-      transition: transform 0.3s ease;
-    }
-    .product-card:hover .product-img-wrapper img {
-      transform: scale(1.08);
-    }
-    .product-category {
-      font-size: 11px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 4px;
-    }
-    .product-name {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-main);
-      margin-bottom: 8px;
-      line-height: 1.35;
-      min-height: 38px;
-    }
-    .product-price-box {
-      margin-top: auto;
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-    }
-    .old-price {
-      font-size: 13px;
-      color: var(--text-muted);
-      text-decoration: line-through;
-      font-weight: 500;
-    }
-    .current-price {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text-main);
-    }
+    .product-img-wrapper { width: 100%; height: 220px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; background: #FAFAFA; border-radius: 4px; overflow: hidden; }
+    .product-img-wrapper img { max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: multiply; transition: transform 0.3s ease; }
+    .product-card:hover .product-img-wrapper img { transform: scale(1.08); }
+    .product-category { font-size: 11px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px; }
+    .product-name { font-size: 14px; font-weight: 600; margin-bottom: 8px; line-height: 1.35; min-height: 38px; }
+    .product-price-box { margin-top: auto; display: flex; align-items: baseline; gap: 10px; }
+    .old-price { font-size: 13px; color: var(--text-muted); text-decoration: line-through; }
+    .current-price { font-size: 18px; font-weight: 700; }
 
     /* PARTNERS & ADVANTAGES */
-    .partners-section {
-      background: var(--bg-surface);
-      padding: 50px 0;
-      border-top: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
-      text-align: center;
-    }
-    .partners-list {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 36px;
-      align-items: center;
-      margin-top: 24px;
-    }
-    .partner-item {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 24px;
-      font-weight: 700;
-      color: #8C847E;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .advantages-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      padding: 50px 0;
-    }
-    .adv-item {
-      background: var(--bg-card);
-      padding: 28px;
-      border-radius: var(--radius);
-      border-left: 3px solid var(--gold);
-    }
-    .adv-item h3 {
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
-    .adv-item p {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
+    .partners-section { background: var(--bg-surface); padding: 50px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); text-align: center; }
+    .partners-list { display: flex; justify-content: center; flex-wrap: wrap; gap: 36px; align-items: center; margin-top: 24px; }
+    .partner-item { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; color: #8C847E; text-transform: uppercase; }
+    .advantages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 50px 0; }
+    .adv-item { background: var(--bg-card); padding: 28px; border-radius: var(--radius); border-left: 3px solid var(--gold); }
+    .adv-item h3 { font-size: 20px; margin-bottom: 8px; }
+    .adv-item p { font-size: 13px; color: var(--text-muted); }
 
     /* CATALOG VIEW */
-    .catalog-layout {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 30px;
-      padding: 40px 0;
-    }
-    .filter-panel {
-      background: var(--bg-surface);
-      padding: 24px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border-color);
-      height: fit-content;
-    }
-    .filter-group {
-      margin-bottom: 24px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--border-color);
-    }
-    .filter-group:last-child {
-      border: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-    .filter-title {
-      font-size: 14px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 12px;
-      color: var(--text-main);
-    }
-    .filter-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .filter-list label {
-      font-size: 13px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      color: #5C554F;
-    }
-    .filter-list input[type="radio"], .filter-list input[type="checkbox"] {
-      accent-color: var(--gold-dark);
-    }
+    .catalog-layout { display: grid; grid-template-columns: 260px 1fr; gap: 30px; padding: 40px 0; }
+    .filter-panel { background: var(--bg-surface); padding: 24px; border-radius: var(--radius); border: 1px solid var(--border-color); height: fit-content; }
+    .filter-group { margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color); }
+    .filter-group:last-child { border: none; margin-bottom: 0; padding-bottom: 0; }
+    .filter-title { font-size: 14px; font-weight: 600; text-transform: uppercase; margin-bottom: 12px; }
+    .filter-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .filter-list label { font-size: 13px; display: flex; align-items: center; gap: 8px; cursor: pointer; color: #5C554F; }
 
     /* PRODUCT CARD VIEW */
-    .product-detail-view {
-      padding: 40px 0 60px;
-    }
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      color: var(--gold-dark);
-      font-weight: 500;
-      margin-bottom: 24px;
-      cursor: pointer;
-    }
-    .product-detail-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.1fr;
-      gap: 40px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      padding: 36px;
-      margin-bottom: 40px;
-    }
-    .detail-gallery {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: #FAFAFA;
-      border-radius: var(--radius);
-      padding: 20px;
-    }
-    .detail-main-img {
-      max-width: 100%;
-      height: 380px;
-      object-fit: contain;
-      mix-blend-mode: multiply;
-    }
-    .detail-info h1 {
-      font-size: 32px;
-      line-height: 1.2;
-      margin-bottom: 12px;
-    }
-    .detail-sku {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-    .detail-price-box {
-      display: flex;
-      align-items: baseline;
-      gap: 16px;
-      margin-bottom: 24px;
-      padding: 16px 0;
-      border-top: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
-    }
-    .detail-price-box .old-price {
-      font-size: 16px;
-    }
-    .detail-price-box .current-price {
-      font-size: 28px;
-    }
-    .detail-desc {
-      font-size: 14px;
-      color: #4A443F;
-      margin-bottom: 24px;
-    }
-    .specs-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 30px;
-      font-size: 13px;
-    }
-    .specs-table td {
-      padding: 8px 0;
-      border-bottom: 1px dashed var(--border-color);
-    }
-    .specs-table td:first-child {
-      color: var(--text-muted);
-      width: 45%;
-    }
-    .specs-table td:last-child {
-      font-weight: 500;
-    }
-    .order-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .btn-action-max {
-      background: var(--gold);
-      color: #231F20;
-      padding: 12px 24px;
-      border-radius: var(--radius);
-      font-size: 13px;
-      font-weight: 600;
-    }
-    .btn-action-tg {
-      background: #231F20;
-      color: #FFFFFF;
-      padding: 12px 24px;
-      border-radius: var(--radius);
-      font-size: 13px;
-      font-weight: 500;
-    }
+    .product-detail-view { padding: 40px 0 60px; }
+    .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--gold-dark); font-weight: 500; margin-bottom: 24px; cursor: pointer; }
+    .product-detail-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius); padding: 36px; margin-bottom: 40px; }
+    .detail-gallery { display: flex; align-items: center; justify-content: center; background: #FAFAFA; border-radius: var(--radius); padding: 20px; }
+    .detail-main-img { max-width: 100%; height: 380px; object-fit: contain; mix-blend-mode: multiply; }
+    .detail-info h1 { font-size: 32px; line-height: 1.2; margin-bottom: 12px; }
+    .detail-sku { font-size: 12px; color: var(--text-muted); margin-bottom: 16px; }
+    .detail-price-box { display: flex; align-items: baseline; gap: 16px; margin-bottom: 24px; padding: 16px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+    .detail-price-box .old-price { font-size: 16px; }
+    .detail-price-box .current-price { font-size: 28px; }
+    .detail-desc { font-size: 14px; color: #4A443F; margin-bottom: 24px; }
+    .specs-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; font-size: 13px; }
+    .specs-table td { padding: 8px 0; border-bottom: 1px dashed var(--border-color); }
+    .specs-table td:first-child { color: var(--text-muted); width: 45%; }
+    .order-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-action-max { background: var(--gold); color: #231F20; padding: 12px 24px; border-radius: var(--radius); font-size: 13px; font-weight: 600; }
+    .btn-action-tg { background: #231F20; color: #FFFFFF; padding: 12px 24px; border-radius: var(--radius); font-size: 13px; font-weight: 500; }
 
-    /* COMPLETE SET (СОБРАТЬ КОМПЛЕКТ) */
-    .set-block {
-      background: var(--bg-card);
-      border-radius: var(--radius);
-      padding: 30px;
-      margin-top: 30px;
-    }
-    .set-block h3 {
-      font-size: 24px;
-      margin-bottom: 8px;
-    }
-    .set-block p {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-    }
-    .set-items-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
+    /* SET BLOCK */
+    .set-block { background: var(--bg-card); border-radius: var(--radius); padding: 30px; margin-top: 30px; }
+    .set-block h3 { font-size: 24px; margin-bottom: 8px; }
+    .set-block p { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
+    .set-items-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
-    /* ABOUT & INFO PAGES */
-    .text-page-content {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      padding: 44px;
-      max-width: 900px;
-      margin: 40px auto;
-    }
-    .text-page-content h1 {
-      font-size: 38px;
-      margin-bottom: 20px;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 14px;
-    }
-    .text-page-content p {
-      font-size: 15px;
-      color: #4A443F;
-      line-height: 1.8;
-      margin-bottom: 16px;
-    }
-    .partners-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 20px 0;
-    }
-    .partners-badges span {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      padding: 6px 14px;
-      border-radius: 4px;
-      font-size: 13px;
-      font-weight: 600;
-    }
+    /* TEXT PAGES */
+    .text-page-content { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius); padding: 44px; max-width: 900px; margin: 40px auto; }
+    .text-page-content h1 { font-size: 38px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 14px; }
+    .text-page-content p { font-size: 15px; color: #4A443F; line-height: 1.8; margin-bottom: 16px; }
+    .partners-badges { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+    .partners-badges span { background: var(--bg-card); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 4px; font-size: 13px; font-weight: 600; }
 
-    /* CONTACTS PAGE */
-    .contacts-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      margin: 40px 0;
-    }
-    .contact-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      padding: 30px;
-    }
-    .contact-card h3 {
-      font-size: 22px;
-      margin-bottom: 16px;
-    }
-    .contact-card p {
-      font-size: 14px;
-      margin-bottom: 10px;
-      color: #5C554F;
-    }
-    .btn-2gis {
-      display: inline-block;
-      margin-top: 14px;
-      background: #739E36;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: var(--radius);
-      font-size: 13px;
-      font-weight: 600;
-    }
+    /* CONTACTS */
+    .contacts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 40px 0; }
+    .contact-card { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius); padding: 30px; }
+    .contact-card h3 { font-size: 22px; margin-bottom: 16px; }
+    .contact-card p { font-size: 14px; margin-bottom: 10px; color: #5C554F; }
+    .btn-2gis { display: inline-block; margin-top: 14px; background: #739E36; color: #fff; padding: 10px 20px; border-radius: var(--radius); font-size: 13px; font-weight: 600; }
 
     /* FOOTER */
-    footer {
-      background: #231F20;
-      color: #C5BFB8;
-      padding: 40px 0 20px;
-      margin-top: auto;
-      font-size: 13px;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 30px;
-      padding-bottom: 30px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .footer-col h4 {
-      color: #FFFFFF;
-      font-size: 16px;
-      margin-bottom: 16px;
-    }
-    .footer-col ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .footer-col a:hover {
-      color: var(--gold);
-    }
-    .copyright {
-      text-align: center;
-      padding-top: 20px;
-      font-size: 12px;
-      color: #79716B;
-    }
+    footer { background: #231F20; color: #C5BFB8; padding: 40px 0 20px; margin-top: auto; font-size: 13px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 30px; padding-bottom: 30px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+    .footer-col h4 { color: #FFFFFF; font-size: 16px; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col a:hover { color: var(--gold); }
+    .copyright { text-align: center; padding-top: 20px; font-size: 12px; color: #79716B; }
 
     @media (max-width: 900px) {
-      .hero-content, .catalog-layout, .product-detail-grid, .contacts-grid {
-        grid-template-columns: 1fr;
-      }
-      .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .metal-grid, .advantages-grid {
-        grid-template-columns: 1fr;
-      }
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      .hero-content, .catalog-layout, .product-detail-grid, .contacts-grid { grid-template-columns: 1fr; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .metal-grid, .advantages-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- TOP BAR С КОНТАКТАМИ И МЕССЕНДЖЕРАМИ -->
   <div class="topbar">
     <div class="container topbar-content">
       <div class="topbar-phones">
@@ -789,7 +206,6 @@
     </div>
   </div>
 
-  <!-- ШАПКА САЙТА -->
   <header>
     <div class="container header-content">
       <div class="logo-area" onclick="showPage('home')">
@@ -809,10 +225,8 @@
     </div>
   </header>
 
-  <!-- ================= СТРАНИЦА: ГЛАВНАЯ ================= -->
+  <!-- ГЛАВНАЯ -->
   <section id="page-home" class="page-section active">
-    
-    <!-- Hero Banner -->
     <div class="hero">
       <div class="container hero-content">
         <div>
@@ -821,23 +235,22 @@
           <a href="javascript:void(0)" onclick="showPage('catalog')" class="btn-gold">Смотреть каталог</a>
         </div>
         <div>
-          <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80" alt="Ювелирные изделия" class="hero-img">
+          <img src="images/hero.jpg" alt="Ювелирные изделия" class="hero-img">
         </div>
       </div>
     </div>
 
-    <!-- Вход по металлам: Золото / Серебро -->
     <div class="container metal-nav">
       <div class="metal-grid">
         <div class="metal-card" onclick="openCatalogWithMetal('gold')">
-          <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80" alt="Золото">
+          <img src="images/gold_banner.jpg" alt="Золото">
           <div class="metal-info">
             <h3>Золото</h3>
             <span>Кольца, цепи, подвески и браслеты &rarr;</span>
           </div>
         </div>
         <div class="metal-card" onclick="openCatalogWithMetal('silver')">
-          <img src="https://images.unsplash.com/photo-1611591475879-11445778a632?auto=format&fit=crop&w=800&q=80" alt="Серебро">
+          <img src="images/silver_banner.jpg" alt="Серебро">
           <div class="metal-info">
             <h3>Серебро</h3>
             <span>Современные коллекции и классика &rarr;</span>
@@ -846,26 +259,20 @@
       </div>
     </div>
 
-    <!-- Витрина: Хиты, Новинки, Шок-цена -->
     <div class="container">
       <div class="section-title">
         <h2>Популярные украшения</h2>
         <p>Каждое изделие проверено нашими ювелирными экспертами</p>
       </div>
-
       <div class="tabs-header">
         <button class="tab-btn active" onclick="filterShowcase('all', this)">Все изделия</button>
         <button class="tab-btn" onclick="filterShowcase('hit', this)">Хиты продаж</button>
         <button class="tab-btn" onclick="filterShowcase('new', this)">Новинки сезона</button>
         <button class="tab-btn" onclick="filterShowcase('shock', this)">Шок-цена</button>
       </div>
-
-      <div class="products-grid" id="showcase-grid">
-        <!-- Генерируется из JS -->
-      </div>
+      <div class="products-grid" id="showcase-grid"></div>
     </div>
 
-    <!-- Партнеры сети -->
     <div class="partners-section">
       <div class="container">
         <div class="section-title" style="margin: 0;">
@@ -882,7 +289,6 @@
       </div>
     </div>
 
-    <!-- Преимущества -->
     <div class="container advantages-grid">
       <div class="adv-item">
         <h3>Гарантия качества</h3>
@@ -899,12 +305,9 @@
     </div>
   </section>
 
-
-  <!-- ================= СТРАНИЦА: КАТАЛОГ ================= -->
+  <!-- КАТАЛОГ -->
   <section id="page-catalog" class="page-section">
     <div class="container catalog-layout">
-      
-      <!-- Фильтры -->
       <aside class="filter-panel">
         <div class="filter-group">
           <div class="filter-title">Металл</div>
@@ -914,7 +317,6 @@
             <label><input type="radio" name="metalFilter" value="silver" onchange="applyFilters()"> Серебро</label>
           </div>
         </div>
-
         <div class="filter-group">
           <div class="filter-title">Категория</div>
           <div class="filter-list">
@@ -924,7 +326,6 @@
             <label><input type="checkbox" value="pendant" onchange="applyFilters()" checked> Подвески и кресты</label>
           </div>
         </div>
-
         <div class="filter-group">
           <div class="filter-title">Особенности</div>
           <div class="filter-list">
@@ -935,185 +336,130 @@
           </div>
         </div>
       </aside>
-
-      <!-- Список изделий -->
       <main>
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
           <h2 style="font-size: 28px;">Каталог украшений</h2>
           <span style="font-size: 13px; color: var(--text-muted);" id="catalog-count">Найдено: 6 изделий</span>
         </div>
-        <div class="products-grid" id="catalog-grid">
-          <!-- Генерируется из JS -->
-        </div>
+        <div class="products-grid" id="catalog-grid"></div>
       </main>
     </div>
   </section>
 
-
-  <!-- ================= СТРАНИЦА: КАРТОЧКА ТОВАРА ================= -->
+  <!-- КАРТОЧКА ТОВАРА -->
   <section id="page-product" class="page-section">
     <div class="container product-detail-view">
       <div class="back-link" onclick="showPage('catalog')">&larr; Вернуться в каталог</div>
-
       <div class="product-detail-grid">
         <div class="detail-gallery">
           <img src="" id="det-img" class="detail-main-img" alt="Украшение">
         </div>
-
         <div class="detail-info">
           <span class="badge hit" id="det-badge">ХИТ</span>
           <h1 id="det-title" style="margin-top: 14px;">Кольцо из красного золота с фианитами</h1>
           <div class="detail-sku">Артикул: <span id="det-sku">4010245</span> | Завод: Sokolov</div>
-
           <div class="detail-price-box">
             <span class="old-price" id="det-old-price">18 900 ₽</span>
             <span class="current-price" id="det-price">12 490 ₽</span>
           </div>
-
-          <p class="detail-desc" id="det-desc">
-            Лаконичное кольцо из красного золота 585 пробы. Идеальная посадка, классический дизайн с акцентной дорожкой фианитов. Прекрасно сочетается с любым образом.
-          </p>
-
+          <p class="detail-desc" id="det-desc"></p>
           <table class="specs-table">
-            <tr>
-              <td>Металл:</td>
-              <td id="det-metal">Красное золото 585</td>
-            </tr>
-            <tr>
-              <td>Вставка:</td>
-              <td id="det-insert">Фианит</td>
-            </tr>
-            <tr>
-              <td>Средний вес:</td>
-              <td id="det-weight">2.14 г</td>
-            </tr>
-            <tr>
-              <td>Ширина / Размер:</td>
-              <td id="det-size">17.5 (ширина шинки 2.8 мм)</td>
-            </tr>
+            <tr><td>Металл:</td><td id="det-metal"></td></tr>
+            <tr><td>Вставка:</td><td id="det-insert"></td></tr>
+            <tr><td>Средний вес:</td><td id="det-weight"></td></tr>
+            <tr><td>Ширина / Размер:</td><td id="det-size"></td></tr>
           </table>
-
           <div class="order-actions">
             <button class="btn-action-max" onclick="alert('Переход в канал/чат сети «Эксклюзив» в MAX для бронирования товара!')">Заказать через MAX</button>
             <button class="btn-action-tg" onclick="alert('Переход в Telegram для консультации менеджера.')">Написать в Telegram</button>
           </div>
         </div>
       </div>
-
-      <!-- Блок «Собрать комплект» по типу Sokolov -->
       <div class="set-block">
         <h3>Собрать ювелирный гарнитур</h3>
         <p>Украшения в едином стиле идеально дополняют друг друга</p>
-        <div class="set-items-grid" id="set-items-container">
-          <!-- Карточки комплекта -->
-        </div>
+        <div class="set-items-grid" id="set-items-container"></div>
       </div>
-
     </div>
   </section>
 
-
-  <!-- ================= СТРАНИЦА: О НАС ================= -->
+  <!-- О НАС -->
   <section id="page-about" class="page-section">
     <div class="container">
       <div class="text-page-content">
         <h1>О ювелирной сети «Эксклюзив»</h1>
-        <p>
-          Мы знаем, как сложно выбрать украшение, когда вокруг столько вариантов. В «Эксклюзиве» мы берём эту сложность на себя. Наш ассортимент формируется из коллекций лучших российских ювелирных производителей: <strong>Александра, Sokolov, Амурский Ювелирный Завод (АЮЗ), KRASTSVETMET, RoseGrace</strong> и др.
-        </p>
+        <p>Мы знаем, как сложно выбрать украшение, когда вокруг столько вариантов. В «Эксклюзиве» мы берём эту сложность на себя. Наш ассортимент формируется из коллекций лучших российских ювелирных производителей: <strong>Александра, Sokolov, Амурский Ювелирный Завод (АЮЗ), KRASTSVETMET, RoseGrace</strong> и др.[cite: 1]</p>
         <div class="partners-badges">
-          <span>Sokolov</span>
-          <span>Александра</span>
-          <span>АЮЗ</span>
-          <span>Красцветмет</span>
-          <span>RoseGrace</span>
+          <span>Sokolov</span><span>Александра</span><span>АЮЗ</span><span>Красцветмет</span><span>RoseGrace</span>
         </div>
-        <p>
-          У каждого бренда — свой почерк: где-то сильнее классика и безупречная огранка, где-то — смелые современные формы. Мы не выставляем всё подряд: отбираем модели, где дизайн, посадка и конструкция соответствуют нашим высоким стандартам.
-        </p>
-        <p>
-          Для нас важно, чтобы украшение не просто красиво смотрелось на витрине или фото, а было удобным и долговечным: не цеплялось за одежду, идеально сидело на руке и сохраняло первозданный блеск долгие годы. Каждый образец мы проверяем лично — и в каталог попадают только те изделия, которые прошли наш строгий контроль.
-        </p>
-        <p>
-          В каталоге «Эксклюзив» — помолвочные кольца, серьги, подвески, браслеты: от вечной классики до актуальных модных трендов. Не нашли своё? Расскажите консультантам о пожеланиях — мы с радостью подскажем подходящие коллекции и поможем с выбором. Пусть результат будет именно таким, как вы мечтали!
-        </p>
+        <p>У каждого бренда — свой почерк: где-то сильнее классика и безупречная огранка, где-то — смелые современные формы[cite: 1]. Мы не выставляем всё подряд: отбираем модели, где дизайн, посадка и конструкция соответствуют нашим высоким стандартам[cite: 1].</p>
+        <p>Для нас важно, чтобы украшение не просто красиво смотрелось на витрине или фото, а было удобным и долговечным: не цеплялось за одежду, идеально сидело на руке и сохраняло первозданный блеск долгие годы[cite: 1]. Каждый образец мы проверяем лично — и в каталог попадают только те изделия, которые прошли наш строгий контроль[cite: 1].</p>
+        <p>В каталоге «Эксклюзив» — помолвочные кольца, серьги, подвески, браслеты: от вечной классики до актуальных модных трендов[cite: 1]. Не нашли своё? Расскажите консультантам о пожеланиях — мы с радостью подскажем подходящие коллекции и поможем с выбором[cite: 1]. Пусть результат будет именно таким, как вы мечтали![cite: 1]</p>
       </div>
     </div>
   </section>
 
-
-  <!-- ================= СТРАНИЦА: ГАРАНТИЯ КАЧЕСТВА ================= -->
+  <!-- ГАРАНТИЯ КАЧЕСТВА -->
   <section id="page-quality" class="page-section">
     <div class="container">
       <div class="text-page-content">
         <h1>Гарантия качества и подлинности</h1>
-        <p>
-          Сеть салонов «Эксклюзив» работает строго в соответствии с законодательством Российской Федерации и стандартами Пробирной палаты.
-        </p>
+        <p>Сеть салонов «Эксклюзив» работает строго в соответствии с законодательством Российской Федерации и стандартами Пробирной палаты.</p>
         <p><strong>Государственное пробирное клеймо:</strong> на каждом изделии из золота и серебра проставлен оттиск клейма, подтверждающий пробу благородного металла.</p>
-        <p><strong>Заводская бирка и пломба:</strong> каждое изделие снабжено опломбированной биркой завода-изготовителя (паспортом изделия), где указаны точный вес, проба, тип вставок и характеристики драгоценных или полудрагоценных камней.</p>
-        <p><strong>Прямой контроль:</strong> мы работаем исключительно с сертифицированными заводами без посредников, что исключает риск фальсификата.</p>
+        <p><strong>Заводская бирка и пломба:</strong> каждое изделие снабжено опломбированной биркой завода-изготовителя (паспортом изделия), где указаны точный вес, проба, тип вставок и характеристики камней.</p>
       </div>
     </div>
   </section>
 
-
-  <!-- ================= СТРАНИЦА: ОБМЕН ================= -->
+  <!-- ОБМЕН -->
   <section id="page-exchange" class="page-section">
     <div class="container">
       <div class="text-page-content">
         <h1>Выгодный обмен золота</h1>
-        <p>
-          В салонах сети «Эксклюзив» действует постоянная программа обмена старых золотых изделий на новые современные украшения.
-        </p>
-        <p><strong>Как происходит обмен:</strong></p>
+        <p>В салонах сети «Эксклюзив» действует постоянная программа обмена старых золотых изделий на новые современные украшения.[cite: 1]</p>
         <ol style="margin-left: 20px; line-height: 1.8; color: #4A443F;">
-          <li>Принесите ваше золотое изделие в любой из наших филиалов (К117 или С18).</li>
+          <li>Принесите ваше золотое изделие в любой из наших филиалов (К117 или С18)[cite: 1].</li>
           <li>Эксперт салона проведет бесплатную оценку пробы и точное взвешивание при вас.</li>
-          <li>Выберите любое украшение из каталога сети: стоимость вашего лома пойдет в зачет стоимости нового изделия с минимальной доплатой или без нее.</li>
+          <li>Стоимость вашего металла идет в зачет нового украшения.</li>
         </ol>
       </div>
     </div>
   </section>
 
-
-  <!-- ================= СТРАНИЦА: КОНТАКТЫ ================= -->
+  <!-- КОНТАКТЫ -->
   <section id="page-contacts" class="page-section">
     <div class="container">
       <div class="section-title">
         <h2>Салоны и контакты</h2>
         <p>Будем рады видеть вас ежедневно в наших салонах</p>
       </div>
-
       <div class="contacts-grid">
         <div class="contact-card">
           <h3>Филиал «Карандаш» / К117</h3>
           <p><strong>Адрес:</strong> центральный торговый комплекс (сектор К117)</p>
           <p><strong>Телефон для связи:</strong> +7 (900) 117-00-00</p>
-          <p><strong>Время работы:</strong> ежедневно с 10:00 до 20:00</p>
-          <p><strong>Мессенджер MAX:</strong> официальный канал салона подключен</p>
-          <a href="https://2gis.ru" target="_blank" class="btn-2gis">Открыть на карте 2ГИС &rarr;</a>
+          <p><strong>Время работы:</strong> ежедневно с 10:00 до 20:00[cite: 1]</p>
+          <p><strong>Мессенджер MAX:</strong> официальный канал салона подключен[cite: 1]</p>
+          <a href="https://2gis.ru" target="_blank" class="btn-2gis">Открыть на карте 2ГИС &rarr;[cite: 1]</a>
         </div>
-
         <div class="contact-card">
           <h3>Филиал С18</h3>
           <p><strong>Адрес:</strong> ювелирная галерея, павильон С18</p>
           <p><strong>Телефон для связи:</strong> +7 (900) 018-00-00</p>
-          <p><strong>Время работы:</strong> ежедневно с 10:00 до 20:00</p>
-          <p><strong>Доставка:</strong> отправка заказов СДЭК по всей России</p>
-          <a href="https://2gis.ru" target="_blank" class="btn-2gis">Открыть на карте 2ГИС &rarr;</a>
+          <p><strong>Время работы:</strong> ежедневно с 10:00 до 20:00[cite: 1]</p>
+          <p><strong>Доставка:</strong> отправка заказов СДЭК по всей России[cite: 1]</p>
+          <a href="https://2gis.ru" target="_blank" class="btn-2gis">Открыть на карте 2ГИС &rarr;[cite: 1]</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ПОДВАЛ (FOOTER) -->
   <footer>
     <div class="container footer-grid">
       <div>
         <h4 style="font-size: 20px;">ЭКСКЛЮЗИВ</h4>
         <p style="margin-bottom: 12px; font-size: 13px;">Сеть ювелирных салонов. Качество, проверенное временем и доверием клиентов.</p>
-        <p>Канал в MAX: <strong style="color: var(--gold);">Эксклюзив Онлайн</strong></p>
+        <p>Канал в MAX: <strong style="color: var(--gold);">Эксклюзив Онлайн</strong>[cite: 1]</p>
       </div>
       <div class="footer-col">
         <h4>Разделы</h4>
@@ -1127,29 +473,25 @@
       <div class="footer-col">
         <h4>Контакты</h4>
         <ul>
-          <li>Тел.: +7 (900) 117-00-00</li>
-          <li>Тел.: +7 (900) 018-00-00</li>
-          <li>Ежедневно 10:00 – 20:00</li>
-          <li>Филиал «Карандаш» в 2ГИС</li>
+          <li>Тел.: +7 (900) 117-00-00[cite: 1]</li>
+          <li>Тел.: +7 (900) 018-00-00[cite: 1]</li>
+          <li>Ежедневно 10:00 – 20:00[cite: 1]</li>
+          <li>Филиал «Карандаш» в 2ГИС[cite: 1]</li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Доставка</h4>
         <ul>
-          <li>Доставка службой СДЭК</li>
+          <li>Доставка службой СДЭК[cite: 1]</li>
           <li>Страховка отправлений</li>
           <li>Самовывоз из салонов</li>
         </ul>
       </div>
     </div>
-    <div class="copyright">
-      &copy; 2026 Сеть ювелирных салонов «Эксклюзив». Все права защищены.
-    </div>
+    <div class="copyright">&copy; 2026 Сеть ювелирных салонов «Эксклюзив». Все права защищены.</div>
   </footer>
 
-  <!-- СКРИПТ: ДАННЫЕ И НАВИГАЦИЯ -->
   <script>
-    // База товаров (согласно обсуждению в чате)
     const products = [
       {
         id: 1,
@@ -1163,9 +505,9 @@
         price: "12 490 ₽",
         badge: "hit",
         badgeText: "ХИТ",
-        img: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80",
+        img: "images/item_1.jpg",
         metalDesc: "Красное золото 585 пробы",
-        insert: "Фианит Swarovski",
+        insert: "Фианит",
         weight: "2.14 г",
         size: "17.5 (ширина 2.8 мм)",
         desc: "Изящное кольцо классического профиля с дорожкой сверкающих фианитов. Идеально сидит на руке и легко комбинируется с серьгами и кулонами."
@@ -1182,7 +524,7 @@
         price: "16 990 ₽",
         badge: "hit",
         badgeText: "ХИТ",
-        img: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=600&q=80",
+        img: "images/item_2.jpg",
         metalDesc: "Красное золото 585 пробы",
         insert: "Фианит",
         weight: "3.42 г",
@@ -1201,7 +543,7 @@
         price: "6 490 ₽",
         badge: "new",
         badgeText: "НОВИНКА",
-        img: "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=600&q=80",
+        img: "images/item_3.jpg",
         metalDesc: "Красное золото 585 пробы",
         insert: "Фианит",
         weight: "1.08 г",
@@ -1220,7 +562,7 @@
         price: "14 990 ₽",
         badge: "shock",
         badgeText: "ШОК-ЦЕНА",
-        img: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=600&q=80",
+        img: "images/item_4.jpg",
         metalDesc: "Красное золото 585 пробы",
         insert: "Без вставок",
         weight: "2.85 г",
@@ -1239,7 +581,7 @@
         price: "5 490 ₽",
         badge: "new",
         badgeText: "НОВИНКА",
-        img: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80",
+        img: "images/item_5.jpg",
         metalDesc: "Серебро 925 пробы с чернением",
         insert: "Без вставок",
         weight: "14.20 г",
@@ -1258,7 +600,7 @@
         price: "2 890 ₽",
         badge: "hit",
         badgeText: "ХИТ",
-        img: "https://images.unsplash.com/photo-1611591475879-11445778a632?auto=format&fit=crop&w=600&q=80",
+        img: "images/item_6.jpg",
         metalDesc: "Серебро 925 пробы",
         insert: "Без вставок",
         weight: "3.60 г",
@@ -1267,21 +609,16 @@
       }
     ];
 
-    // Переключение страниц
     function showPage(pageId) {
       document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
       document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-
       const targetPage = document.getElementById('page-' + pageId);
       if (targetPage) targetPage.classList.add('active');
-
       const targetNav = document.getElementById('nav-' + pageId);
       if (targetNav) targetNav.classList.add('active');
-
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Рендер карточки товара в HTML
     function createProductCardHTML(item) {
       return `
         <div class="product-card" onclick="openProductDetail(${item.id})">
@@ -1299,13 +636,10 @@
       `;
     }
 
-    // Инициализация витрины главной страницы
     function renderShowcase(filterType = 'all') {
       const container = document.getElementById('showcase-grid');
       let filtered = products;
-      if (filterType !== 'all') {
-        filtered = products.filter(p => p.badge === filterType);
-      }
+      if (filterType !== 'all') filtered = products.filter(p => p.badge === filterType);
       container.innerHTML = filtered.map(createProductCardHTML).join('');
     }
 
@@ -1315,17 +649,14 @@
       renderShowcase(type);
     }
 
-    // Фильтрация каталога
     function applyFilters() {
       const metal = document.querySelector('input[name="metalFilter"]:checked').value;
       const categories = Array.from(document.querySelectorAll('.filter-group input[type="checkbox"]:checked')).map(cb => cb.value);
-
       const filtered = products.filter(p => {
         const matchMetal = (metal === 'all' || p.metal === metal);
         const matchCat = categories.length === 0 || categories.includes(p.category) || categories.includes(p.type);
         return matchMetal && matchCat;
       });
-
       const catalogGrid = document.getElementById('catalog-grid');
       catalogGrid.innerHTML = filtered.map(createProductCardHTML).join('');
       document.getElementById('catalog-count').textContent = `Найдено: ${filtered.length} изделий`;
@@ -1340,11 +671,9 @@
       }
     }
 
-    // Открытие карточки изделия и блока «Собрать комплект»
     function openProductDetail(id) {
       const item = products.find(p => p.id === id);
       if (!item) return;
-
       document.getElementById('det-img').src = item.img;
       document.getElementById('det-title').textContent = item.title;
       document.getElementById('det-sku').textContent = item.sku;
@@ -1358,7 +687,6 @@
       document.getElementById('det-weight').textContent = item.weight;
       document.getElementById('det-size').textContent = item.size;
 
-      // Блок «Собрать комплект» (показываем сопутствующие украшения)
       const related = products.filter(p => p.id !== item.id && p.metal === item.metal).slice(0, 3);
       const setContainer = document.getElementById('set-items-container');
       setContainer.innerHTML = related.map(rel => `
@@ -1374,7 +702,6 @@
       showPage('product');
     }
 
-    // Запуск при загрузке
     renderShowcase('all');
     applyFilters();
   </script>
